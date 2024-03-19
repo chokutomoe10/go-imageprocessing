@@ -58,8 +58,8 @@ func makeRequestAndAssert(t *testing.T, url string, handler http.HandlerFunc, ex
 
 func TestConvertHandler(t *testing.T) {
 	filePaths := []string{
-		"uploads/PNG_transparency_demonstration_1.png",
-		"uploads/Ducati_side_shadow.png",
+		"images/uploads/PNG_transparency_demonstration_1.png",
+		"images/uploads/Ducati_side_shadow.png",
 	}
 
 	body := &bytes.Buffer{}
@@ -75,9 +75,9 @@ func TestConvertHandler(t *testing.T) {
 
 func TestResizeHandler(t *testing.T) {
 	filePaths := []string{
-		"uploads/PNG_transparency_demonstration_1.png",
-		"uploads/Ducati_side_shadow.png",
-		"uploads/view.jpeg",
+		"images/uploads/PNG_transparency_demonstration_1.png",
+		"images/uploads/Ducati_side_shadow.png",
+		"images/uploads/view.jpeg",
 	}
 
 	body := &bytes.Buffer{}
@@ -103,9 +103,9 @@ func TestResizeHandler(t *testing.T) {
 
 func TestCompressHandler(t *testing.T) {
 	filePaths := []string{
-		"uploads/PNG_transparency_demonstration_1.png",
-		"uploads/Ducati_side_shadow.png",
-		"uploads/view.jpeg",
+		"images/uploads/PNG_transparency_demonstration_1.png",
+		"images/uploads/Ducati_side_shadow.png",
+		"images/uploads/view.jpeg",
 	}
 
 	body := &bytes.Buffer{}

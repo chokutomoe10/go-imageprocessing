@@ -49,7 +49,7 @@ func Convert(w http.ResponseWriter, r *http.Request) {
 		fileType := http.DetectContentType(fileByte)
 
 		if fileType == "image/png" {
-			tempFilePng, err := ioutil.TempFile("converted/PNG", "image-*.png")
+			tempFilePng, err := ioutil.TempFile("images/converted/PNG", "image-*.png")
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
@@ -71,7 +71,7 @@ func Convert(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 
-			tempFileJpeg, errJpeg := ioutil.TempFile("converted/JPEG", "image-*.jpeg")
+			tempFileJpeg, errJpeg := ioutil.TempFile("images/converted/JPEG", "image-*.jpeg")
 			if errJpeg != nil {
 				http.Error(w, errJpeg.Error(), http.StatusInternalServerError)
 				return
@@ -121,7 +121,7 @@ func Resize(w http.ResponseWriter, r *http.Request) {
 
 		ext := filepath.Ext(fileHeader.Filename)
 
-		tempFile, errFile := ioutil.TempFile("uploads", "image-*"+ext)
+		tempFile, errFile := ioutil.TempFile("images/uploads", "image-*"+ext)
 		if errFile != nil {
 			http.Error(w, errFile.Error(), http.StatusInternalServerError)
 			return
@@ -140,7 +140,7 @@ func Resize(w http.ResponseWriter, r *http.Request) {
 		resized := gocv.NewMat()
 		gocv.Resize(img, &resized, image.Pt(sizeX, sizeY), 0, 0, gocv.InterpolationDefault)
 
-		tempResizedFile, errResize := ioutil.TempFile("resized", "image-*"+ext)
+		tempResizedFile, errResize := ioutil.TempFile("images/resized", "image-*"+ext)
 		if errResize != nil {
 			http.Error(w, errResize.Error(), http.StatusInternalServerError)
 			return
@@ -209,7 +209,7 @@ func Compress(w http.ResponseWriter, r *http.Request) {
 
 		ext := filepath.Ext(fileHeader.Filename)
 
-		tempFile, errFile := ioutil.TempFile("uploads", "image-*"+ext)
+		tempFile, errFile := ioutil.TempFile("images/uploads", "image-*"+ext)
 		if errFile != nil {
 			http.Error(w, errFile.Error(), http.StatusInternalServerError)
 			return
@@ -225,7 +225,7 @@ func Compress(w http.ResponseWriter, r *http.Request) {
 		}
 		defer img.Close()
 
-		tempCompressedFile, errCompress := ioutil.TempFile("compressed", "image-*"+ext)
+		tempCompressedFile, errCompress := ioutil.TempFile("images/compressed", "image-*"+ext)
 		if errCompress != nil {
 			http.Error(w, errCompress.Error(), http.StatusInternalServerError)
 			return
