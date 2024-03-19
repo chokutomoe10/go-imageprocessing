@@ -22,15 +22,15 @@ go run main.go
 
 To test the HTTP routes, you can use application called Postman or other applications that have similar functionalities with it to test the HTTP routes.
 
-1. Convert
+### Convert
 
 Go to `Body`, `form-data`, add `Images` for `Key`, upload PNG images from your local machine in `Value` (you can use the images inside the uploads folder), and send the request to `localhost:8080/convert` url with `POST` method.
 
-2. Resize
+### Resize
 
 Go to `Body`, `form-data`, add `Images`, `SizeX`, `SizeY` for `Key`, upload images from your local machine in `Value` (you can use the images inside the uploads folder), and send the request to `localhost:8080/resize` url with `POST` method.
 
-3. Compress
+### Compress
 
 Go to `Body`, `form-data`, add `Images`, `SizeJPEG` for `JPEG` images, `SizeX` and `SizeY` for `PNG` images for `Key`, upload images from your local machine in `Value` (you can use the images inside the uploads folder), and send the request to `localhost:8080/compress` url with `POST` method
 
