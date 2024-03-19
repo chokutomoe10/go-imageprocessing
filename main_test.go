@@ -70,7 +70,7 @@ func TestConvertHandler(t *testing.T) {
 	}
 	writer.Close()
 
-	makeRequestAndAssert(t, "/convert", Convert, http.StatusOK, "Successfully Converted Files", body, writer.FormDataContentType())
+	makeRequestAndAssert(t, "localhost:8080/convert", Convert, http.StatusOK, "Successfully Converted Files", body, writer.FormDataContentType())
 }
 
 func TestResizeHandler(t *testing.T) {
@@ -98,7 +98,7 @@ func TestResizeHandler(t *testing.T) {
 
 	writer.Close()
 
-	makeRequestAndAssert(t, "/resize", Resize, http.StatusOK, "Successfully Resized Files", body, writer.FormDataContentType())
+	makeRequestAndAssert(t, "localhost:8080/resize", Resize, http.StatusOK, "Successfully Resized Files", body, writer.FormDataContentType())
 }
 
 func TestCompressHandler(t *testing.T) {
@@ -129,5 +129,5 @@ func TestCompressHandler(t *testing.T) {
 
 	writer.Close()
 
-	makeRequestAndAssert(t, "/compress", Compress, http.StatusOK, "Successfully Compressed Files", body, writer.FormDataContentType())
+	makeRequestAndAssert(t, "localhost:8080/compress", Compress, http.StatusOK, "Successfully Compressed Files", body, writer.FormDataContentType())
 }
