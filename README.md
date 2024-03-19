@@ -32,7 +32,7 @@ Go to `Body`, `form-data`, add `Images`, `SizeX`, `SizeY` for `Key`, upload imag
 
 ### Compress
 
-Go to `Body`, `form-data`, add `Images`, `SizeJPEG` for `JPEG` images, `SizeX` and `SizeY` for `PNG` images for `Key`, upload images from your local machine in `Value` (you can use the images inside the uploads folder), and send the request to `localhost:8080/compress` url with `POST` method
+Go to `Body`, `form-data`, add `Images`, `SizeJPEG` (for `JPEG` images), `SizeX` and `SizeY` (for `PNG` images) for `Key`, upload images from your local machine in `Value` (you can use the images inside the uploads folder), and send the request to `localhost:8080/compress` url with `POST` method
 
 ## Running the tests
 
